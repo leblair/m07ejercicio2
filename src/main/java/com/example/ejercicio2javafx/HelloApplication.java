@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
 
-        stage.setTitle("Pokimon Profile");
+        stage.setTitle("Example");
 
         BorderPane border = new BorderPane();
 
@@ -51,7 +51,6 @@ public class HelloApplication extends Application {
                 new BorderWidths(2));
         Border border = new Border(borderStroke);
 
-
         VBox vbox = new VBox();
 
         vbox.setPadding(new Insets(12));
@@ -68,7 +67,7 @@ public class HelloApplication extends Application {
         // Image
         HBox image = new HBox();
         image.setPadding(new Insets(10,0,10,0));
-        ImageView profile = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/pokedex.png")));
+        ImageView profile = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/profi.png")));
         profile.setFitHeight(100);
         profile.setFitWidth(100);
         Rectangle clip = new Rectangle(
@@ -99,47 +98,37 @@ public class HelloApplication extends Application {
         texts.setAlignment(Pos.CENTER_LEFT);
 
         Text nombreText = new Text();
-        nombreText.setText("Nombre");
+        nombreText.setText("Name");
         nombreText.setFont(Font.font("Arial" , 14));
         Text direcText = new Text();
-        direcText.setText("Ciudad");
+        direcText.setText("City");
         direcText.setFont(Font.font("Arial" , 14));
         Text tel = new Text();
-        tel.setText("Teléfono");
+        tel.setText("Phone");
         tel.setFont(Font.font("Arial" , 14));
         Text juego = new Text();
         juego.setText("Juego");
         juego.setFont(Font.font("Arial" , 14));
-        Text gen = new Text();
-        gen.setText("Generación");
-        gen.setFont(Font.font("Arial" , 14));
-        TextField nombre = new TextField("Daniel");
+        TextField nombre = new TextField("User");
         nombre.setMinWidth(200);
         nombre.setMinHeight(25);
-        TextField direccion = new TextField("Pueblo Paleta");
+        TextField direccion = new TextField("");
         direccion.setMinWidth(200);
         direccion.setMinHeight(25);
-        TextField telefono = new TextField("681133534");
+        TextField telefono = new TextField("");
         telefono.setMinWidth(200);
         telefono.setMinHeight(25);
-        TextField juegos = new TextField("Pokemon Rojo");
-        juegos.setMinWidth(200);
-        juegos.setMinHeight(25);
-        TextField generación = new TextField("1ª Generación");
-        generación.setMinWidth(200);
-        generación.setMinHeight(25);
+
+
         textField.getChildren().add(nombre);
         textField.getChildren().add(direccion);
         textField.getChildren().add(telefono);
-        textField.getChildren().add(juegos);
-        textField.getChildren().add(generación);
+
 
 
         texts.getChildren().add(nombreText);
         texts.getChildren().add(direcText);
         texts.getChildren().add(tel);
-        texts.getChildren().add(juego);
-        texts.getChildren().add(gen);
         HBox fields = new HBox();
         fields.getChildren().add(texts);
         fields.getChildren().add(textField);
@@ -174,80 +163,77 @@ public class HelloApplication extends Application {
         //Login
         VBox login = new VBox();
         login.setAlignment(Pos.CENTER);
-        Text title = new Text("DATOS");
+        Text title = new Text("data");
         title.setFont(Font.font("Arial",  FontWeight.BOLD,20));
         title.setFill(Color.WHITE);
         login.getChildren().add(title);
-        login.setStyle("-fx-background-color: #F22F1D;" +
+        login.setStyle("-fx-background-color: #B43F1D;" +
                 "-fx-background-radius: 8px;");
         login.setMinHeight(100);
         login.setMinWidth(175);
         hbox.getChildren().add(login);
-        //Space
         VBox space =new VBox();
         space.setMinWidth(20);
         hbox.getChildren().add(space);
-        //pokemons
-        VBox pokemons = new VBox();
+        VBox users = new VBox();
 
-        pokemons.setAlignment(Pos.CENTER);
-        Text pokeName = new Text("905");
-        pokeName.setFont(Font.font("Arial",  FontWeight.BOLD,20));
-        pokeName.setFill(Color.WHITE);
-        pokemons.getChildren().add(pokeName);
-        Text pokeText = new Text("Pokemons");
-        pokeText.setFont(Font.font("Arial",16));
-        pokeText.setFill(Color.WHITE);
-        pokemons.getChildren().add(pokeText);
-        pokemons.setStyle("-fx-background-color: #F22F1D;" +
-                "-fx-background-radius: 8px;");
-        pokemons.setMinHeight(100);
-        pokemons.setMinWidth(100);
-        hbox.getChildren().add(pokemons);
+        users.setAlignment(Pos.CENTER);
+        Text textus = new Text("0");
+        textus.setFont(Font.font("Arial",  FontWeight.BOLD,20));
+        textus.setFill(Color.WHITE);
+        users.getChildren().add(textus);
+        Text texuser = new Text("Users");
+        texuser.setFont(Font.font("Arial",16));
+        texuser.setFill(Color.WHITE);
+        users.getChildren().add(texuser);
+        users.setStyle("-fx-background-color: #B43F1D;" +
+                "-fx-background-radius: 20px;");
+        users.setMinHeight(100);
+        users.setMinWidth(100);
+        hbox.getChildren().add(users);
         //space
         VBox space2 =new VBox();
         space2.setMinWidth(20);
         hbox.getChildren().add(space2);
         //juegos
-        VBox juegos = new VBox();
+        VBox currency = new VBox();
 
-        juegos.setAlignment(Pos.CENTER);
-        Text numJuego= new Text("33");
-        numJuego.setFont(Font.font("Arial",  FontWeight.BOLD,20));
-        numJuego.setFill(Color.WHITE);
-        juegos.getChildren().add(numJuego);
-        Text juegoText = new Text("Juegos");
-        juegoText.setFont(Font.font("Arial",16));
-        juegoText.setFill(Color.WHITE);
-        juegos.getChildren().add(juegoText);
-        juegos.setStyle("-fx-background-color: #F22F1D;" +
+        currency.setAlignment(Pos.CENTER);
+        Text textcur= new Text("10");
+        textcur.setFont(Font.font("Arial",  FontWeight.BOLD,20));
+        textcur.setFill(Color.WHITE);
+        currency.getChildren().add(textcur);
+        Text textcur2 = new Text("Currency");
+        textcur2.setFont(Font.font("Arial",16));
+        textcur2.setFill(Color.WHITE);
+        currency.getChildren().add(textcur2);
+        currency.setStyle("-fx-background-color: #B54F1D;" +
                 "-fx-background-radius: 8px;");
-        juegos.setMinHeight(100);
-        juegos.setMinWidth(100);
-        hbox.getChildren().add(juegos);
+        currency.setMinHeight(100);
+        currency.setMinWidth(100);
+        hbox.getChildren().add(currency);
 
         //space
         VBox space3 =new VBox();
         space3.setMinWidth(20);
         hbox.getChildren().add(space3);
 
-        //anime
-        VBox animes = new VBox();
+        VBox newusers = new VBox();
 
-        animes.setAlignment(Pos.CENTER);
-        Text temporada= new Text("24");
-        temporada.setFont(Font.font("Arial",  FontWeight.BOLD,20));
-        temporada.setFill(Color.WHITE);
-        animes.getChildren().add(temporada);
-        Text temporadaText = new Text("Temporadas");
-        temporadaText.setFont(Font.font("Arial",16));
-        temporadaText.setFill(Color.WHITE);
-        animes.getChildren().add(temporadaText);
-        animes.setStyle("-fx-background-color: #F22F1D;" +
+        newusers.setAlignment(Pos.CENTER);
+        Text newusers2= new Text("1000");
+        newusers2.setFont(Font.font("Arial",  FontWeight.BOLD,20));
+        newusers2.setFill(Color.WHITE);
+        newusers.getChildren().add(newusers2);
+        Text userstext = new Text("New Users");
+        userstext.setFont(Font.font("Arial",16));
+        userstext.setFill(Color.WHITE);
+        newusers.getChildren().add(userstext);
+        newusers.setStyle("-fx-background-color: #B43F1D;" +
                 "-fx-background-radius: 8px;");
-        animes.setMinHeight(100);
-        animes.setMinWidth(100);
-        hbox.getChildren().add(animes);
+        newusers.setMinHeight(100);
+        newusers.setMinWidth(100);
+        hbox.getChildren().add(newusers);
 
 
 
@@ -267,83 +253,45 @@ public class HelloApplication extends Application {
         vbox.setAlignment(Pos.TOP_LEFT);
         vbox.setBorder(border);
 
-        Text title = new Text("Juegos");
+        Text title = new Text("Fields");
         title.setFont(Font.font("Arial", 14));
         vbox.getChildren().add(title);
         Separator separator =new Separator();
         vbox.getChildren().add(separator);
-        // arceus
-        CheckBox arceus =new CheckBox();
-        arceus.setText("Leyendas Pokemon: Arceus");
-        arceus.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(arceus);
 
-        // espada
-        CheckBox espada =new CheckBox();
-        espada.setText("Pokemon Espada y Escudo");
-        espada.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(espada);
+        CheckBox field1 =new CheckBox();
+        field1.setText("field 1");
+        field1.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field1);
 
-        // Let's go Evee
-        CheckBox letsgoEvee =new CheckBox();
-        letsgoEvee.setText("Pokemon Let's go Evee");
-        letsgoEvee.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(letsgoEvee);
+        CheckBox field2 =new CheckBox();
+        field2.setText("field 2");
+        field2.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field2);
 
-        // Let's go Pikachu
-        CheckBox letsgoPikachu =new CheckBox();
-        letsgoPikachu.setText("Pokemon Let's go Pikachu");
-        letsgoPikachu.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(letsgoPikachu);
+        CheckBox field3 =new CheckBox();
+        field3.setText("field 3");
+        field3.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field3);
 
-        // Rojo
-        CheckBox red =new CheckBox();
-        red.setText("Pokemon Rojo");
-        red.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(red);
-
-        // Azul
-        CheckBox blue =new CheckBox();
-        blue.setText("Pokemon Azul");
-        blue.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(blue);
-
-        // Amarillo
-        CheckBox yellow =new CheckBox();
-        yellow.setText("Pokemon Amarillo");
-        yellow.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(yellow);
-
-        // Plata
-        CheckBox plata =new CheckBox();
-        plata.setText("Pokemon Plata");
-        plata.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(plata);
-
-        // Oro
-        CheckBox oro =new CheckBox();
-        oro.setText("Pokemon Oro");
-        oro.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(oro);
-
-        // Cristal
-        CheckBox cristal =new CheckBox();
-        cristal.setText("Pokemon Cristal");
-        cristal.setPadding(new Insets(10,0,0,0));
-        vbox.getChildren().add(cristal);
+        CheckBox field4 =new CheckBox();
+        field4.setText("field 4");
+        field4.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field4);
 
 
+        CheckBox field5 =new CheckBox();
+        field5.setText("field 5");
+        field5.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field5);
 
-        // Negro
-        CheckBox black =new CheckBox();
-        black.setText("Pokemon Negro");
-        black.setPadding(new Insets(10,0,10,0));
-        vbox.getChildren().add(black);
+        CheckBox field6 =new CheckBox();
+        field6.setText("field 6");
+        field6.setPadding(new Insets(10,0,0,0));
+        vbox.getChildren().add(field6);
 
-
-        //Button
         Button button = new Button();
-        button.setText("Guardar");
+        button.setText("save");
         vbox.getChildren().add(button);
         return vbox;
     }
@@ -352,23 +300,23 @@ public class HelloApplication extends Application {
         ToolBar toolbar = new ToolBar();
         toolbar.setPadding(new Insets(4, 4, 4, 4));
 
-        Button pokedex = new Button("Pokedex");
-        pokedex.setBackground(background);
+        Button inde = new Button("Index");
+        inde.setBackground(background);
 
 
-        Button juegos = new Button("Juegos");
-        juegos.setBackground(background);
+        Button data = new Button("Data");
+        data.setBackground(background);
 
-        Button anime = new Button("Anime");
-        anime.setBackground(background);
+        Button contact = new Button("Contact");
+        contact.setBackground(background);
 
-        Button mapas = new Button("Mapas");
-        mapas.setBackground(background);
+        Button about = new Button("About us");
+        about.setBackground(background);
 
-        toolbar.getItems().add(pokedex);
-        toolbar.getItems().add(juegos);
-        toolbar.getItems().add(anime);
-        toolbar.getItems().add(mapas);
+        toolbar.getItems().add(inde);
+        toolbar.getItems().add(data);
+        toolbar.getItems().add(contact);
+        toolbar.getItems().add(about);
         return toolbar;
     }
     public VBox addVboxLeft() {
@@ -385,57 +333,56 @@ public class HelloApplication extends Application {
         vbox.setBorder(border);
 
 
-        Text title = new Text("Pokimons Iniciales");
+        Text title = new Text("List");
         title.setFont(Font.font("Arial", 14));
         vbox.getChildren().add(title);
         Separator separator =new Separator();
         vbox.getChildren().add(separator);
-        //Vbox Charmander
-        VBox vboxCharmander = new VBox();
-        vboxCharmander.setPadding(new Insets(10));
-        vboxCharmander.setSpacing(8);
-        Text charmander = new Text("Charmander");
+
+        VBox vbox1 = new VBox();
+        vbox1.setPadding(new Insets(10));
+        vbox1.setSpacing(8);
+        Text text1 = new Text("item 1");
         title.setFont(Font.font("Arial", 14));
-        vboxCharmander.setAlignment(Pos.TOP_CENTER);
-        vboxCharmander.setBorder(border);
-        vboxCharmander.getChildren().add(charmander);
-        ImageView charmanderImg = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/charmander.png")));
-        charmanderImg.setFitHeight(100);
-        charmanderImg.setFitWidth(100);
-        vboxCharmander.getChildren().add(charmanderImg);
+        vbox1.setAlignment(Pos.TOP_CENTER);
+        vbox1.setBorder(border);
+        vbox1.getChildren().add(text1);
 
-        //Vbox Squirtle
-        VBox vboxSquirtle = new VBox();
-        vboxSquirtle.setPadding(new Insets(10));
-        vboxSquirtle.setSpacing(8);
-        Text squirtle = new Text("Squirtle");
+        ImageView img1 = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/pythonslogo.png")));
+        img1.setFitHeight(100);
+        img1.setFitWidth(100);
+        vbox1.getChildren().add(img1);
+
+        VBox vbox2 = new VBox();
+        vbox2.setPadding(new Insets(10));
+        vbox2.setSpacing(8);
+        Text squirtle = new Text("item 2");
         title.setFont(Font.font("Arial", 14));
-        vboxSquirtle.setAlignment(Pos.TOP_CENTER);
-        vboxSquirtle.setBorder(border);
-        vboxSquirtle.getChildren().add(squirtle);
-        ImageView squirtleImg = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/squirtle.png")));
-        squirtleImg.setFitHeight(100);
-        squirtleImg.setFitWidth(100);
-        vboxSquirtle.getChildren().add(squirtleImg);
+        vbox2.setAlignment(Pos.TOP_CENTER);
+        vbox2.setBorder(border);
+        vbox2.getChildren().add(squirtle);
+        ImageView img2 = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/jaavaslogo.jpg")));
+        img2.setFitHeight(100);
+        img2.setFitWidth(100);
+        vbox2.getChildren().add(img2);
 
-        //Vbox Bulbasaur
-        VBox vboxBulbasaur = new VBox();
-        vboxSquirtle.setPadding(new Insets(10));
-        vboxSquirtle.setSpacing(8);
-        Text bulbasaur = new Text("Bulbasaur");
+        VBox vbox3 = new VBox();
+        vbox2.setPadding(new Insets(10));
+        vbox2.setSpacing(8);
+        Text bulbasaur = new Text("item 3");
         title.setFont(Font.font("Arial", 14));
-        vboxBulbasaur.setAlignment(Pos.TOP_CENTER);
-        vboxBulbasaur.setBorder(border);
-        vboxBulbasaur.getChildren().add(bulbasaur);
-        ImageView bulbasaurImg = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/bulbasaur.png")));
-        bulbasaurImg.setFitHeight(100);
-        bulbasaurImg.setFitWidth(100);
-        vboxBulbasaur.getChildren().add(bulbasaurImg);
+        vbox3.setAlignment(Pos.TOP_CENTER);
+        vbox3.setBorder(border);
+        vbox3.getChildren().add(bulbasaur);
+        ImageView img3 = new ImageView(new Image(HelloApplication.class.getResourceAsStream("drawable/cpluslogo.png")));
+        img3.setFitHeight(100);
+        img3.setFitWidth(100);
+        vbox3.getChildren().add(img3);
 
 
-        vbox.getChildren().add(vboxCharmander);
-        vbox.getChildren().add(vboxSquirtle);
-        vbox.getChildren().add(vboxBulbasaur);
+        vbox.getChildren().add(vbox1);
+        vbox.getChildren().add(vbox2);
+        vbox.getChildren().add(vbox3);
 
         return vbox;
     }
